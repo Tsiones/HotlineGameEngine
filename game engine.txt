@@ -1,0 +1,35 @@
+-- Class GameEngine
+field: jframe
+field: view (from jframe/jpanel) ?
+field: GameVariables
+field: keyboard
+field: mouse
+
+-- Class RoomManager
+field: Room
+method: setRoom(GameRoom)
+method: getRoom
+: manages curent room and switching rooms
+
+-- Class Room
+constructor(GameObject)
+field: GameEntities
+method: setSize()
+: manages collision checks/events etc
+
+-- Class GameEntities
+field: Map<Class,List<GameObject>>
+method: add/remove/get Instance(GameObject)
+
+-- Abstract GameObject
+field: location
+field: state (unused, installed, destroyed)
+method: (Final) install(RoomManager)
+method: destroy() -> GameAccess.etities.remove(this)
+method: onDraw (overrideable)
+abstract: onKeyPress
+abstract: onKeyHold
+abstract: onKeyRelease
+abstract: onCreate
+abstract: onUpdate
+annotation method: onCollision
