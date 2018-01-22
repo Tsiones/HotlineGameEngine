@@ -9,8 +9,8 @@ import javax.swing.JPanel;
 
 public class HotlineGameEngine
 {
-	private JPanel panel;
-	private JFrame frame;
+	private final JPanel panel;
+	private final JFrame frame;
 
 	@SuppressWarnings("serial")
 	public HotlineGameEngine(String title)
