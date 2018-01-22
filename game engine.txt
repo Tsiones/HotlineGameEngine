@@ -3,13 +3,13 @@ field: jframe
 field: view (from jframe/jpanel) ?
 field: GameVariables
 field: keyboard
-field: mouse
+field: mouse 
 
 -- Class RoomManager
 field: Room
 method: setRoom(GameRoom)
 method: getRoom
-: manages curent room and switching rooms
+: manages current room and switching rooms
 
 -- Class Room
 constructor(GameObject)
