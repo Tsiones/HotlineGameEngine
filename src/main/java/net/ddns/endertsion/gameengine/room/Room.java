@@ -11,8 +11,13 @@ public class Room implements Serializable
 	 * 
 	 */
 
+	public void update()
+	{
+		// TODO: implement
+	}
+
 	public void draw(Graphics2D g2d)
 	{
-
+		// TODO: implement
 	}
 }
