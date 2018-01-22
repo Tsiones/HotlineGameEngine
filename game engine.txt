@@ -21,6 +21,12 @@ method: setSize()
 field: Map<Class,List<GameObject>>
 method: add/remove/get Instance(GameObject)
 
+-- Class SpriteManager
+: class for loading sprites and keeping them in cache
+
+-- Class Sprite
+: class that represents a image loaded from SpriteManager
+
 -- Abstract GameObject
 field: location
 field: state (unused, installed, destroyed)
