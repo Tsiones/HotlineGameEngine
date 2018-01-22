@@ -1,8 +1,8 @@
-package net.ddns.endercrypt.keyboard.binds;
+package net.ddns.endertsion.gameengine.keyboard.binds;
 
 import java.awt.event.KeyEvent;
 
-import net.ddns.endercrypt.keyboard.BindType;
+import net.ddns.endertsion.gameengine.keyboard.BindType;
 
 public class AnyNumbers extends BindRange
 {

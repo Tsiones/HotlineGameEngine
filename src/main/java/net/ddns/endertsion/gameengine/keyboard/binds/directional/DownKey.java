@@ -1,8 +1,8 @@
-package net.ddns.endercrypt.keyboard.binds.directional;
+package net.ddns.endertsion.gameengine.keyboard.binds.directional;
 
 import java.awt.event.KeyEvent;
 
-import net.ddns.endercrypt.keyboard.BindType;
+import net.ddns.endertsion.gameengine.keyboard.BindType;
 
 public class DownKey extends AbstractDirectionalKey
 {

@@ -1,8 +1,8 @@
-package net.ddns.endercrypt.keyboard.binds.directional;
+package net.ddns.endertsion.gameengine.keyboard.binds.directional;
 
-import net.ddns.endercrypt.keyboard.BindType;
-import net.ddns.endercrypt.keyboard.binds.MultiKey;
-import net.ddns.endercrypt.keyboard.binds.SpecificKey;
+import net.ddns.endertsion.gameengine.keyboard.BindType;
+import net.ddns.endertsion.gameengine.keyboard.binds.MultiKey;
+import net.ddns.endertsion.gameengine.keyboard.binds.SpecificKey;
 
 public class AbstractDirectionalKey extends MultiKey
 {
