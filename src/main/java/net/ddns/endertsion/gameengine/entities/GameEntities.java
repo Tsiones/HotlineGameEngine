@@ -1,6 +1,14 @@
 package net.ddns.endertsion.gameengine.entities;
 
-public class GameEntities
+import java.io.Serializable;
+
+public class GameEntities implements Serializable
 {
+	private static final long serialVersionUID = -4603230297232749703L;
+
+	/**
+	 * 
+	 */
+
 	// TODO: implement
 }
