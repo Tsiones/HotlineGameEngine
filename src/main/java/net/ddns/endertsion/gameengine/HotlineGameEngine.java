@@ -7,10 +7,14 @@ import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import net.ddns.endertsion.gameengine.keyboard.KeyboardManager;
+
 public class HotlineGameEngine
 {
 	private final JPanel panel;
 	private final JFrame frame;
+
+	private final KeyboardManager keyboard = new KeyboardManager();
 
 	@SuppressWarnings("serial")
 	public HotlineGameEngine(String title)
@@ -23,7 +27,6 @@ public class HotlineGameEngine
 				draw((Graphics2D) g);
 			}
 		};
-
 		frame = new JFrame(title);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(panel);
@@ -31,6 +34,8 @@ public class HotlineGameEngine
 		frame.pack();
 		frame.setLocationRelativeTo(null);
 		frame.setVisible(true);
+
+		keyboard.install(frame);
 	}
 
 	private void draw(Graphics2D g2d)
