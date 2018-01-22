@@ -1,12 +1,19 @@
 package net.ddns.endertsion.gameengine.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GameEntities
+public class GameEntities implements Serializable
 {
+	private static final long serialVersionUID = -4603230297232749703L;
+
+	/**
+	 * 
+	 */
+
 	private Map<Class<?>, List<GameEntity>> entities = new HashMap<>();
 
 	public void add(GameEntity entity)
