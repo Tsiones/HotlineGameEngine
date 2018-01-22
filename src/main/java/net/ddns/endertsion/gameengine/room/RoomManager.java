@@ -1,6 +1,7 @@
 package net.ddns.endertsion.gameengine.room;
 
 import java.awt.Graphics2D;
+import java.io.File;
 import java.util.Optional;
 
 public class RoomManager
@@ -34,5 +35,15 @@ public class RoomManager
 			Room room = getRoom();
 			room.draw(g2d);
 		}
+	}
+
+	public void save(File file)
+	{
+		// TODO: implement
+	}
+
+	public void load(File file)
+	{
+		// TODO: implement
 	}
 }
