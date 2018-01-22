@@ -12,6 +12,7 @@ public class HotlineGameEngine
 	private JPanel panel;
 	private JFrame frame;
 
+	@SuppressWarnings("serial")
 	public HotlineGameEngine(String title)
 	{
 		panel = new JPanel()
