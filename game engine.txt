@@ -22,9 +22,12 @@ field: Map<Class,List<GameObject>>
 method: add/remove/get Instance(GameObject)
 
 -- Class SpriteManager
+field: Map<String,BufferedImage>
 : class for loading sprites and keeping them in cache
 
 -- Class Sprite
+field: String path
+field: (transient) BufferedImage
 : class that represents a image loaded from SpriteManager
 
 -- Abstract GameObject
