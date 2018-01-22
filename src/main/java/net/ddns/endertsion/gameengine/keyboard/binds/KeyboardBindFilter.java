@@ -1,6 +1,6 @@
-package net.ddns.endercrypt.keyboard.binds;
+package net.ddns.endertsion.gameengine.keyboard.binds;
 
-import net.ddns.endercrypt.keyboard.KeyboardEvent;
+import net.ddns.endertsion.gameengine.keyboard.KeyboardEvent;
 
 public interface KeyboardBindFilter
 {

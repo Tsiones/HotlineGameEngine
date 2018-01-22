@@ -1,4 +1,4 @@
-package net.ddns.endercrypt.keyboard;
+package net.ddns.endertsion.gameengine.keyboard;
 
 public enum BindType
 {

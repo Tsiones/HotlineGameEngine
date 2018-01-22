@@ -1,4 +1,4 @@
-package net.ddns.endercrypt.keyboard;
+package net.ddns.endertsion.gameengine.keyboard;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -9,9 +9,9 @@ import java.util.Set;
 
 import javax.swing.JFrame;
 
-import net.ddns.endercrypt.keyboard.binds.KeyboardBindFilter;
+import net.ddns.endertsion.gameengine.keyboard.binds.KeyboardBindFilter;
 
-public class TerminalKeyboard
+public class KeyboardManager
 {
 	private List<Binding> bindings = new ArrayList<>();
 

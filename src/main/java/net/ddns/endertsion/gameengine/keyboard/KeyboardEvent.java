@@ -1,4 +1,4 @@
-package net.ddns.endercrypt.keyboard;
+package net.ddns.endertsion.gameengine.keyboard;
 
 import java.awt.event.KeyEvent;
 
@@ -8,7 +8,7 @@ public class KeyboardEvent
 	private BindType bindType;
 	private boolean shift, ctrl, meta;
 
-	public KeyboardEvent(int keyCode, BindType bindType, TerminalKeyboard keyboardManager)
+	public KeyboardEvent(int keyCode, BindType bindType, KeyboardManager keyboardManager)
 	{
 		this.keyCode = keyCode;
 		this.bindType = bindType;
