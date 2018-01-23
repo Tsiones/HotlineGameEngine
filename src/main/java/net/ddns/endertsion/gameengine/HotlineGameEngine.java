@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import net.ddns.endertsion.gameengine.keyboard.KeyboardManager;
+import net.ddns.endercrypt.library.keyboardmanager.KeyboardManager;
 import net.ddns.endertsion.gameengine.room.RoomManager;
 
 public class HotlineGameEngine
