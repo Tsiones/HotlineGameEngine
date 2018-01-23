@@ -4,6 +4,8 @@ import java.awt.Graphics2D;
 import java.io.File;
 import java.util.Optional;
 
+import net.ddns.endertsion.gameengine.entities.GameEntity;
+
 public class RoomManager
 {
 	private Optional<Room> optionalRoom = Optional.empty();
@@ -11,6 +13,14 @@ public class RoomManager
 	public RoomManager()
 	{
 
+	}
+
+	public Room startRoom(GameEntity initEntity)
+	{
+		Room room = new Room();
+		room.addEntity(initEntity);
+		setRoom(room);
+		return room;
 	}
 
 	public void setRoom(Room room)
