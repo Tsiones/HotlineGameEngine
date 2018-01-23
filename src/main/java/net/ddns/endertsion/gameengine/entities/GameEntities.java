@@ -1,10 +1,11 @@
 package net.ddns.endertsion.gameengine.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class GameEntities implements Serializable
 {
@@ -14,7 +15,7 @@ public class GameEntities implements Serializable
 	 * 
 	 */
 
-	private Map<Class<?>, List<GameEntity>> entities = new HashMap<>();
+	private Map<Class<?>, Set<GameEntity>> entities = new HashMap<>();
 
 	public void add(GameEntity entity)
 	{
@@ -31,13 +32,13 @@ public class GameEntities implements Serializable
 		return getList(entity).contains(entity);
 	}
 
-	private List<GameEntity> getList(GameEntity entity)
+	private Collection<GameEntity> getList(GameEntity entity)
 	{
 		Class<? extends GameEntity> realClass = entity.getClass();
-		List<GameEntity> list = entities.get(realClass);
+		Set<GameEntity> list = entities.get(realClass);
 		if (list == null)
 		{
-			list = new ArrayList<>();
+			list = new HashSet<>();
 			entities.put(realClass, list);
 		}
 		return list;
