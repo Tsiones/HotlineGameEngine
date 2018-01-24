@@ -20,7 +20,7 @@ public class GameEntities implements Serializable
 
 	public void add(GameEntity entity)
 	{
-		getList(entity).add(entity);
+		getCollection(entity).add(entity);
 	}
 
 	public void addAll(GameEntity... entitiesArray)
@@ -35,22 +35,27 @@ public class GameEntities implements Serializable
 
 	public boolean remove(GameEntity entity)
 	{
-		return getList(entity).remove(entity);
+		return getCollection(entity).remove(entity);
 	}
 
 	public boolean contains(GameEntity entity)
 	{
-		return getList(entity).contains(entity);
+		return getCollection(entity).contains(entity);
 	}
 
-	private Collection<GameEntity> getList(GameEntity entity)
+	private Set<GameEntity> getCollection(GameEntity entity)
 	{
-		Class<? extends GameEntity> realClass = entity.getClass();
-		Set<GameEntity> list = entities.get(realClass);
+		Class<? extends GameEntity> entityClass = entity.getClass();
+		return getCollection(entityClass);
+	}
+
+	private Set<GameEntity> getCollection(Class<? extends GameEntity> entityClass)
+	{
+		Set<GameEntity> list = entities.get(entityClass);
 		if (list == null)
 		{
 			list = new HashSet<>();
-			entities.put(realClass, list);
+			entities.put(entityClass, list);
 		}
 		return list;
 	}
