@@ -1,6 +1,7 @@
 package net.ddns.endertsion.gameengine.entities;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -20,6 +21,16 @@ public class GameEntities implements Serializable
 	public void add(GameEntity entity)
 	{
 		getList(entity).add(entity);
+	}
+
+	public void addAll(GameEntity... entities)
+	{
+		Arrays.stream(entities).forEach(this::add);
+	}
+
+	public void addAll(Collection<GameEntity> entities)
+	{
+		entities.stream().forEach(this::add);
 	}
 
 	public boolean remove(GameEntity entity)
