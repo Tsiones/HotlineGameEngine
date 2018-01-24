@@ -23,14 +23,14 @@ public class GameEntities implements Serializable
 		getList(entity).add(entity);
 	}
 
-	public void addAll(GameEntity... entities)
+	public void addAll(GameEntity... entitiesArray)
 	{
-		Arrays.stream(entities).forEach(this::add);
+		Arrays.stream(entitiesArray).forEach(this::add);
 	}
 
-	public void addAll(Collection<GameEntity> entities)
+	public void addAll(Collection<GameEntity> entitiesCollection)
 	{
-		entities.stream().forEach(this::add);
+		entitiesCollection.stream().forEach(this::add);
 	}
 
 	public boolean remove(GameEntity entity)
