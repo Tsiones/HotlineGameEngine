@@ -43,6 +43,8 @@ public class GameEntities implements Serializable
 		return getCollection(entity).contains(entity);
 	}
 
+	// TODO: public generic getEntity / getEntities
+
 	private Set<GameEntity> getCollection(GameEntity entity)
 	{
 		Class<? extends GameEntity> entityClass = entity.getClass();
