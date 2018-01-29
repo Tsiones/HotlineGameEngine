@@ -16,7 +16,7 @@
 		<dependency>
 			<groupId>com.github.EnderCrypt</groupId>
 			<artifactId>KeyboardManager</artifactId>
-			<version>04f5515745</version>
+			<version>master-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 
