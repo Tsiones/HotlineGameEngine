@@ -50,11 +50,12 @@ public class GameEntities implements Serializable
 		return Collections.unmodifiableSet(getCollection(entityClass));
 	}
 
-	public <T extends GameEntity> Set<? extends GameEntity> getEntitiesOfSubtype(Class<T> entityClass)
+	@SuppressWarnings("unchecked")
+	public <T extends GameEntity> Set<? extends T> getEntitiesOfSubtype(Class<T> entityClass)
 	{
 		Set<Class<? extends GameEntity>> classes = entities.keySet();
-		classes.removeIf(c -> c.isAssignableFrom(entityClass));
-		Set<? extends GameEntity> result = classes.stream().flatMap(c -> getCollection(c).stream()).collect(Collectors.toSet());
+		classes.removeIf(c -> !entityClass.isAssignableFrom(c));
+		Set<? extends T> result = (Set<? extends T>) classes.stream().flatMap(c -> getCollection(c).stream()).collect(Collectors.toSet());
 		return result;
 	}
 
