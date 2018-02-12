@@ -56,7 +56,7 @@ public class GameEntities implements Serializable
 		Set<Class<? extends GameEntity>> classes = entities.keySet();
 		classes.removeIf(c -> !entityClass.isAssignableFrom(c));
 		Set<? extends T> result = (Set<? extends T>) classes.stream().flatMap(c -> getCollection(c).stream()).collect(Collectors.toSet());
-		return result;
+		return Collections.unmodifiableSet(result);
 	}
 
 	// MISC //
