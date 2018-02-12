@@ -13,7 +13,7 @@ public class Room implements Serializable
 	 * 
 	 */
 
-	private GameEntities entities = new GameEntities();
+	private GameEntities entities = new GameEntities(this);
 
 	public GameEntities entities()
 	{
