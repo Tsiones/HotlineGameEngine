@@ -1,4 +1,4 @@
-package test;
+package net.ddns.endertsiones;
 
 import net.ddns.endertsion.gameengine.HotlineGameEngine;
 
