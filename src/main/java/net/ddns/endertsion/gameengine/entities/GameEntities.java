@@ -53,8 +53,7 @@ public class GameEntities implements Serializable
 
 	private <T extends GameEntity> Set<T> getCollection(T entity)
 	{
-		Class<? extends GameEntity> entityClass = entity.getClass();
-		return (Set<T>) getCollection(entityClass);
+		return (Set<T>) getCollection(entity.getClass());
 	}
 
 	private <T extends GameEntity> Set<T> getCollection(Class<T> entityClass)
