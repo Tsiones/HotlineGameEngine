@@ -51,11 +51,13 @@ public class GameEntities implements Serializable
 
 	// COLLECTION //
 
+	@SuppressWarnings("unchecked")
 	private <T extends GameEntity> Set<T> getCollection(T entity)
 	{
 		return (Set<T>) getCollection(entity.getClass());
 	}
 
+	@SuppressWarnings("unchecked")
 	private <T extends GameEntity> Set<T> getCollection(Class<T> entityClass)
 	{
 		Set<T> list = (Set<T>) entities.get(entityClass);
