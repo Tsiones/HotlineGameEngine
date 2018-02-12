@@ -16,7 +16,7 @@ public class GameEntities implements Serializable
 	 * 
 	 */
 
-	private Map<Class<?>, Set<GameEntity>> entities = new HashMap<>();
+	private Map<Class<? extends GameEntity>, Set<? extends GameEntity>> entities = new HashMap<>();
 
 	// ADD //
 
@@ -51,15 +51,15 @@ public class GameEntities implements Serializable
 
 	// COLLECTION //
 
-	private Set<GameEntity> getCollection(GameEntity entity)
+	private <T extends GameEntity> Set<T> getCollection(T entity)
 	{
 		Class<? extends GameEntity> entityClass = entity.getClass();
-		return getCollection(entityClass);
+		return (Set<T>) getCollection(entityClass);
 	}
 
-	private Set<GameEntity> getCollection(Class<? extends GameEntity> entityClass)
+	private <T extends GameEntity> Set<T> getCollection(Class<T> entityClass)
 	{
-		Set<GameEntity> list = entities.get(entityClass);
+		Set<T> list = (Set<T>) entities.get(entityClass);
 		if (list == null)
 		{
 			list = new HashSet<>();
