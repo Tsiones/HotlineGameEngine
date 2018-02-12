@@ -4,7 +4,6 @@ import java.awt.Graphics2D;
 import java.io.Serializable;
 
 import net.ddns.endertsion.gameengine.entities.GameEntities;
-import net.ddns.endertsion.gameengine.entities.GameEntity;
 
 public class Room implements Serializable
 {
@@ -16,10 +15,9 @@ public class Room implements Serializable
 
 	private GameEntities entities = new GameEntities();
 
-	public Room addEntity(GameEntity entity)
+	public GameEntities entities()
 	{
-		entities.add(entity);
-		return this;
+		return entities;
 	}
 
 	public void update()
