@@ -11,6 +11,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import net.ddns.endertsion.gameengine.room.Room;
+
 public class GameEntities implements Serializable
 {
 	private static final long serialVersionUID = -4603230297232749703L;
@@ -21,10 +23,22 @@ public class GameEntities implements Serializable
 
 	private Map<Class<? extends GameEntity>, Set<? extends GameEntity>> entities = new HashMap<>();
 
+	private Room roomContext;
+
+	public GameEntities(Room roomContext)
+	{
+		this.roomContext = roomContext;
+	}
+
 	// ADD //
 
 	public void add(GameEntity entity)
 	{
+		if (entity.roomContext != null)
+		{
+			throw new IllegalArgumentException("Cannot add entity " + entity + " as its currently in another room");
+		}
+		entity.roomContext = roomContext;
 		getCollection(entity).add(entity);
 	}
 
@@ -63,6 +77,11 @@ public class GameEntities implements Serializable
 
 	public boolean remove(GameEntity entity)
 	{
+		if (entity.roomContext == null)
+		{
+			throw new IllegalArgumentException("Cannot remove entity " + entity + " as its currently not in a room");
+		}
+		entity.roomContext = null;
 		return getCollection(entity).remove(entity);
 	}
 
