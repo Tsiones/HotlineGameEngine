@@ -18,6 +18,8 @@ public class GameEntities implements Serializable
 
 	private Map<Class<?>, Set<GameEntity>> entities = new HashMap<>();
 
+	// ADD //
+
 	public void add(GameEntity entity)
 	{
 		getCollection(entity).add(entity);
@@ -33,6 +35,10 @@ public class GameEntities implements Serializable
 		entitiesCollection.stream().forEach(this::add);
 	}
 
+	// GET //
+
+	// MISC //
+
 	public boolean remove(GameEntity entity)
 	{
 		return getCollection(entity).remove(entity);
@@ -43,7 +49,7 @@ public class GameEntities implements Serializable
 		return getCollection(entity).contains(entity);
 	}
 
-	// TODO: public generic getEntity / getEntities
+	// COLLECTION //
 
 	private Set<GameEntity> getCollection(GameEntity entity)
 	{
