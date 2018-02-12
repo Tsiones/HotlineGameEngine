@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 public class GameEntities implements Serializable
@@ -36,6 +37,11 @@ public class GameEntities implements Serializable
 	}
 
 	// GET //
+
+	public <T extends GameEntity> Optional<T> getEntity(Class<T> entityClass)
+	{
+		return getCollection(entityClass).stream().findAny();
+	}
 
 	// MISC //
 
