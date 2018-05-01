@@ -73,7 +73,7 @@ public class GameEntities implements Serializable
 		return Collections.unmodifiableSet(result);
 	}
 
-	// MISC //
+	// REMOVE //
 
 	public boolean remove(GameEntity entity)
 	{
@@ -84,6 +84,21 @@ public class GameEntities implements Serializable
 		entity.roomContext = null;
 		return getCollection(entity).remove(entity);
 	}
+
+	public void clear(Class<? extends GameEntity> entityClass)
+	{
+		getCollection(entityClass).forEach(this::remove);
+	}
+
+	public void clearAll()
+	{
+		for (Class<? extends GameEntity> entityClass : entities.keySet())
+		{
+			clear(entityClass);
+		}
+	}
+
+	// MISC //
 
 	public boolean contains(GameEntity entity)
 	{
